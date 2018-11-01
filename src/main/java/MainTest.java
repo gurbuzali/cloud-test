@@ -34,8 +34,8 @@ public class MainTest {
 
     public static void main(String[] args) throws Exception {
         ClientConfig config = new ClientConfig();
-        config.setGroupConfig(new GroupConfig("ali3", "60b7073336c84938b0da5fa081dcdfd7"));
-        String token = "GujeuhSE1OnoIAkJvfzQnmffFaVqMrJljRj2bSZr9XepSo2gNj";
+        config.setGroupConfig(new GroupConfig("ali3", "80750413cb1f423e95d1eca88648a98b"));
+        String token = "KTAp4sJrqX5dh7SmWHNXGpd6wy3OnyWhzq3SVVU7EJsn9ZDLsY";
         config.setProperty(ClientProperty.HAZELCAST_CLOUD_DISCOVERY_TOKEN.getName(), token);
         config.setProperty(HazelcastCloudDiscovery.CLOUD_URL_BASE_PROPERTY.getName(), "https://dev.hazelcast.cloud");
 //        config.getNetworkConfig().addAddress("34.220.136.2:31748");
