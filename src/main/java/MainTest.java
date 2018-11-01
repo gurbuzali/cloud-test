@@ -38,16 +38,17 @@ public class MainTest {
         String token = "KTAp4sJrqX5dh7SmWHNXGpd6wy3OnyWhzq3SVVU7EJsn9ZDLsY";
         config.setProperty(ClientProperty.HAZELCAST_CLOUD_DISCOVERY_TOKEN.getName(), token);
         config.setProperty(HazelcastCloudDiscovery.CLOUD_URL_BASE_PROPERTY.getName(), "https://dev.hazelcast.cloud");
+        config.setProperty("hazelcast.client.statistics.enabled","true");
 //        config.getNetworkConfig().addAddress("34.220.136.2:31748");
 //        config.getNetworkConfig().setSmartRouting(false);
 //        config.getNetworkConfig().setSSLConfig(new SSLConfig().setEnabled(true));
         HazelcastInstance client = HazelcastClient.newHazelcastClient(config);
-        IMap<Integer, byte[]> map = client.getMap("map2");
+        IMap<Integer, byte[]> map = client.getMap("map3");
 //        map.clear();
 
         int nThreads = 5;
-        int itemCount = 1000;
-        byte[] bytes = new byte[32*1024];
+        int itemCount = 200;
+        byte[] bytes = new byte[64*1024];
         AtomicLong totalCount = new AtomicLong();
         ExecutorService executorService = Executors.newFixedThreadPool(nThreads);
         for (int i = 0; i < nThreads; i++) {
